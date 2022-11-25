@@ -38,9 +38,10 @@
 @property (nonatomic, strong) BTConfiguration *configuration;
 @property (nonatomic, strong, readwrite) BTAPIClient *apiClient;
 @property (nonatomic, strong) UIView *contentView;
-@property (nonatomic, strong) UIView *contentClippingView;
-@property (nonatomic, strong) BTPaymentSelectionViewController *paymentSelectionViewController;
-@property (nonatomic, strong) UINavigationController *paymentSelectionNavigationController;
+#pragma mark - Override comment
+//@property (nonatomic, strong) UIView *contentClippingView;
+//@property (nonatomic, strong) BTPaymentSelectionViewController *paymentSelectionViewController;
+//@property (nonatomic, strong) UINavigationController *paymentSelectionNavigationController;
 @property (nonatomic, strong) NSLayoutConstraint *contentViewTopConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *contentViewBottomConstraint;
 @property (nonatomic) BOOL useBlur;

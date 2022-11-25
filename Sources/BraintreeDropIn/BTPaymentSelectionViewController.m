@@ -22,6 +22,10 @@
 #import <BraintreeApplePay/BraintreeApplePay.h>
 #endif
 
+#pragma mark - Override begin
+#import "BTDropInDefaultExt.h"
+#pragma mark - Override end
+
 #define SAVED_PAYMENT_METHODS_COLLECTION_SPACING 6
 #define SAVED_PAYMENT_METHODS_COLLECTION_WIDTH 105
 #define SAVED_PAYMENT_METHODS_COLLECTION_HEIGHT 165
@@ -29,7 +33,7 @@
 @interface BTPaymentSelectionViewController () <BTPaymentSelectionHeaderViewDelegate, BTVaultedPaymentMethodsTableViewCellDelegate>
 @property (nonatomic, strong) NSArray *paymentOptionsData;
 @property (nonatomic, readonly) BOOL hasVaultedPaymentMethods;
-@property (nonatomic, strong) UITableView *paymentOptionsTableView;
+//@property (nonatomic, strong) UITableView *paymentOptionsTableView;
 @property (nonatomic, strong) id application;
 @end
 
@@ -154,6 +158,10 @@ static BOOL _vaultedCardAppearAnalyticSent = NO;
                 [self sendVaultedCardAppearAnalytic];
             }
             [self showLoadingScreen:NO];
+            
+#pragma mark - Override begin
+            [[NSNotificationCenter defaultCenter] postNotificationName:BTDropInDefaultExt.PAYMENT_LOADED object:nil];
+#pragma mark - Override end
         }];
     }
 }

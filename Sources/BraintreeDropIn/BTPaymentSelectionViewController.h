@@ -18,6 +18,9 @@
 /// Most payment methods are automatically Vaulted if the client token was generated with a customer ID.
 @property (nonatomic, strong) NSArray *paymentMethodNonces;
 
+#pragma mark - Override comment
+@property (nonatomic, strong) UITableView *paymentOptionsTableView;
+
 /// The delegate
 @property (nonatomic, weak) id<BTPaymentSelectionViewControllerDelegate, BTDropInControllerDelegate, BTViewControllerPresentingDelegate> delegate;
 

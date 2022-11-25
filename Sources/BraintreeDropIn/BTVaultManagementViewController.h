@@ -11,6 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<BTDropInControllerDelegate> delegate;
 
+#pragma mark - Override begin
+@property (nonatomic, strong) NSArray *paymentMethodNonces;
+@property (nonatomic, strong) UITableView *paymentOptionsTableView;
+#pragma mark - Override end
+
 @end
 
 NS_ASSUME_NONNULL_END

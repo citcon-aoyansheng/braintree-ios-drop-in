@@ -330,4 +330,10 @@ static NSArray *customTranslations;
     return NSLocalizedStringWithDefaultValue(@"DEV_SAMPLE_SMS_CODE_INFO", [self localizationTable], [self localizationBundle], @"Any code passes, example: 12345 \n\nIncorrect code is: 999999", @"DEV_SAMPLE_SMS_CODE_INFO");
 }
 
+#pragma mark - Override begin
++ (NSString *)NEW_ACTION {
+    return NSLocalizedStringWithDefaultValue(@"NEW_ACTION", [self localizationTable], [self localizationBundle], @"New", @"NEW_ACTION");
+}
+#pragma mark - Override end
+
 @end

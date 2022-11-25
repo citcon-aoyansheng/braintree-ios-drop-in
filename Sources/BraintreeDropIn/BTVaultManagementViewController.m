@@ -13,9 +13,15 @@
 #import <BraintreeCore/BraintreeCore.h>
 #endif
 
+#pragma mark - Override begin
+#import "BTDropInDefaultExt.h"
+#pragma mark - Override end
+
 @interface BTVaultManagementViewController ()
-@property (nonatomic, strong) NSArray *paymentMethodNonces;
-@property (nonatomic, strong) UITableView *paymentOptionsTableView;
+#pragma mark - Override begin
+//@property (nonatomic, strong) NSArray *paymentMethodNonces;
+//@property (nonatomic, strong) UITableView *paymentOptionsTableView;
+#pragma mark - Override end
 @end
 
 @implementation BTVaultManagementViewController
@@ -77,6 +83,9 @@ NSString *const BTGraphQLDeletePaymentMethodFromSingleUseToken = @""
 - (void)configurationLoaded:(__unused BTConfiguration *)configuration error:(NSError *)error {
     if (!error) {
         [self fetchPaymentMethodsOnCompletion:^{
+#pragma mark - Override begin
+            [[NSNotificationCenter defaultCenter] postNotificationName:BTDropInDefaultExt.VAULTS_LOADED object:nil];
+#pragma mark - Override end
             [self.paymentOptionsTableView reloadData];
             [self showLoadingScreen:NO];
             [self.view layoutIfNeeded];

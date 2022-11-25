@@ -4,6 +4,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#pragma mark - Override begin
+@class BTPaymentSelectionViewController;
+#pragma mark - Override end
+
 @class BTPaymentMethodNonce;
 @protocol BTAppSwitchDelegate, BTViewControllerPresentingDelegate;
 
@@ -33,6 +37,12 @@ typedef void (^BTDropInControllerHandler)(BTDropInController * _Nonnull controll
 ///
 /// @param sender The sender requesting the view be changed.
 - (void)showCardForm:(id)sender;
+
+#pragma mark - Override begin
+@property (nonatomic, strong) BTPaymentSelectionViewController *paymentSelectionViewController;
+@property (nonatomic, strong) UINavigationController *paymentSelectionNavigationController;
+@property (nonatomic, strong) UIView *contentClippingView;
+#pragma mark - Override end
 
 @end
 

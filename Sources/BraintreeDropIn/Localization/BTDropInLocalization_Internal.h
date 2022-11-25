@@ -92,5 +92,9 @@
 + (NSString *)DEV_SAMPLE_SMS_CODE_TITLE;
 + (NSString *)DEV_SAMPLE_SMS_CODE_INFO;
 
+#pragma mark - Override begin
++ (NSString *)NEW_ACTION;
+#pragma mark - Override end
+
 
 @end
